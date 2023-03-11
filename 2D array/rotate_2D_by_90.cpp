@@ -12,6 +12,12 @@ void transpose(int arr[3][3],int row, int col){
 void reverse(int arr[3][3],int row,int col){
     for(int i=0;i<row;i++){
         // reverse(arr.begin(),arr.end());
+        int low = 0, high = row-1;
+        while(low<high){
+            swap(arr[i][low],arr[i][high]);
+            low++;
+            high--;
+        }
     }
 }
 
@@ -19,6 +25,7 @@ int main(){
     int arr[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
     
     transpose(arr,3,3);
+    reverse(arr,3,3);
     for(int i=0;i<3;i++){
         for(int j=0;j<3;j++){
             cout<<arr[i][j]<<" ";
